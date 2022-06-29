@@ -1,0 +1,172 @@
+* Declarações de variáveis *
+Errado
+    var currentAge 
+      currentAge = 22 /ERRO! 
+      
+//não passamos para a variável o tipo dela como no exemplo a seguir ->
+     
+     *Certo
+      var currentAge:Int
+      currentAge = 22
+    
+    *Errado 
+    /*var currentYear = "que ano hein?"
+    currentYear = 2021/ERRO!
+    
+    // Não convertemos a String "que ano hein?" em inteiro, 
+    como desclaramos 2021 que é um inteiro precisamos fazer essa conversão.
+    
+    *Certo
+    var currentYear = "que ano hein?" 
+    currentYear = 2021.toString()
+    println(currentYear)*/
+
+
+** Concatenando os valores aritiméticos **
+val count = 10
+    val times = 9
+    val r = times + count 
+      println(r)
+      println(count.plus(times))
+
+
+*** Operadores comparativos ***
+
+const val EQUAL = 0 
+const val LESS = -1
+const val MORE = 1
+fun main() {
+    val d = 220 
+    val t = d
+  
+    println(d != t)
+    println(!d.equals(t))
+
+
+**** Operadores In e Range ****
+
+const val MIN_AGE = 16
+const val MAX_AGE = 68
+fun main() {
+    var age = (1..34).random()
+    println(age)
+    println(age in MIN_AGE..MAX_AGE)
+    println(age>= MIN_AGE && age <= MAX_AGE)
+
+***** Concatenação de String *****
+
+fun main() {
+    val welcome = "Olá"
+    val name = "Luisa"
+    println("$welcome, ${name.capitalize()}!")
+    
+    //"{variável} , {variável} !"
+
+
+****** Métodos de Validação Empty (vazio) and  Blank (Em Branco) ******
+
+fun main() {
+    val empty = ""
+     println(empty.length)
+    
+    val blank = "          "
+     println(blank.length)
+     
+    // println(empty.isEmpty() && empty.isBlank())
+     println(blank.isEmpty() || blank.isBlank())
+
+
+
+
+
+* funções de ordem superior *
+fun main() {
+    val z:Int
+    
+    z = calculate(34, 90){a,b ->
+        println ("vou calcular! $a * $b")
+        (a + b) * 2
+    }
+   println(z)  
+}
+fun sum (a1:Int,a2:Int) = a1.plus(a2)
+
+fun calculate(n1:Int,n2:Int,operation:(Int,Int)->Int) = operation(n1,n2)
+ 
+
+
+// ** Elvis Operator ?:0 **
+
+fun main() {
+    val grade = (0..10).random()
+ println(grade.getStudentStatus())
+}
+
+fun Int.getStudentStatus():String{
+    println("nota $this")
+    return when (this){
+        in 0..4 -> "Reprovado"
+        in 5..7 -> "mediano"
+        in 8..9 -> "boa"
+        10 -> "Excelente"
+        else -> "Indefinido"
+    }
+}
+
+
+
+// Estrutura de repetição -> * For *
+
+fun main() {
+for (i in 0..20){
+    print("$i ")
+}
+}
+// Conta de forma Decrescente !
+fun downTo(){
+    for(i in 20 downTo 0){
+        print ("$i ")
+    }
+}
+// Conta com -1 se a contagem é de 0..20 ele vai de 0..19
+fun until(){
+    for(i in 1 until 20){
+        print("$i ")
+    }
+}
+//exemplo:step(2) conta de 2 em dois!
+fun step(num:Int){
+    for (i in 0..20 step num){
+        print("$i ")
+    }
+}
+fun letters(){
+    val sArray = "Olha essa string!"
+     //Pega o tamanho do array
+    //cada posição do array
+    for ( l in sArray){
+        println(l.toUpperCase())
+    }
+}
+
+// Com forEach 
+
+fun letters(){
+    val sArray = "Olha essa string!"
+    //Pega o tamanho do array
+    //cada posição do array
+   sArray.forEach{ l ->
+       print(l + " ")
+   }
+    }
+
+
+
+
+
+
+
+
+
+
+  

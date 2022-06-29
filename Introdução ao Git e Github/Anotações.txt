@@ -1,0 +1,31 @@
+Git - Versionamento de código local 
+GitHub - Versionamento de código remoto 
+
+Entrar em uma pasta 
+cd "nome da pasta"
+
+sair de uma pasta
+cd..
+
+Criar uma pasta
+mkdir "nome da pasta"
+
+Iniciar git em uma pasta 
+- git init
+
+Verficar se está tudo adicionado 
+- git status
+
+Adicionar contéudos a máquina local
+- git Add "nome do arquivo" ou adicionar tudo git add *
+
+Adicionar descrição da ultima atuaização
+- git commit -m "Nome que deseja colocar"
+
+Adicionar no repositório remoto (GitHub)
+- git push ou git push origin main 
+
+Adicionar um clone com ultima atualização 
+- git pull ou git pull origin main
+
+
